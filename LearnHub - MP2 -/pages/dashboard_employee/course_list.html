@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Course List</title>
+    <link rel="icon" href="Images/Jey_logo.png">
+    <link rel="stylesheet" href="employee-dash.css"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.2/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.dataTables.min.css" />
+    
+  </head>
+
+  <body>
+    <!--Navigation section-->
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+          <div class="logo_name">LearnHub</div>
+        <i class='bx bx-menu' id="btn" ></i>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Search...">
+          <span class="tooltip">Search</span>
+        </li>
+
+        <li>
+          <a href="index.html">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Dashboard</span>
+          </a>       
+          <span class="tooltip">Dashboard</span>
+        </li>
+
+        <li>
+          <a href="account.html">
+          <i class='bx bx-user' ></i>
+          <span class="links_name">Account</span>
+          </a>
+          <span class="tooltip">Account</span>
+        </li>
+
+        <li>
+          <a href="resources.html">
+          <i class='bx bx-add-to-queue' ></i>
+          <span class="links_name">Resources</span>
+          </a>
+          <span class="tooltip">Resources</span>
+        </li>
+
+        <li>
+          <a href="course_list.html">
+          <i class='bx bx-book' ></i>
+          <span class="links_name">Course List</span>
+          </a>
+          <span class="tooltip">Course List</span>
+        </li>
+      
+        <li>
+          <a href="messages.html">
+            <i class='bx bx-chat' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+        </li>
+
+
+        <li>
+          <a href="payments.html">
+            <i class='bx bx-wallet-alt'></i>
+            <span class="links_name">Payments</span>
+          </a>
+          <span class="tooltip">Payments</span>
+        </li>
+
+        <li>
+          <a href="settings.html">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg">
+            <div class="name_job">
+              <div class="#complete_name"></div>
+              <div class="job"></div>
+            </div>
+          </div>
+          <i class='bx bx-log-out' id="log_out" type="button" onclick="logout()"></i>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- End of Navigation section-->
+
+    <div class="container">
+      <h2>Course List <b id="complete_name"></b></h2>
+
+      <div class="dropdown" id="#complete_name">
+        <button class="dropbtn" id="name" > Hello!<i class='bx bxs-chevron-down'></i> </button>
+        <div class="dropdown-content">
+          <a id="log_out" type="button" onclick="logout()">Logout</a>
+        </div>
+      </div>
+
+      <div class="card" id="course-list" style="margin-top: 1%; margin-left: -5%;">
+        <div class="card-body">
+          <h4 class="card-title">Course List</h4>
+          <button
+          id="modalClickerShow"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#formModal"
+          >
+          Add New
+         </button>
+          <table id="course" style="width: 100%;" class="display responsive nowrap cell-border compact stripe">
+            <thead>
+              <tr>    
+                <th>ID</th>
+                <th>Description</th>
+                <th>Days</th>
+                <th>Price</th>
+                <th>Action</th>     
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <!--Modal Form-->
+        <div
+          class="modal fade"
+          id="formModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+          style="display: none"
+          >
+          <form onsubmit="return store()">
+            <div class="modal-dialog">
+              <div class="modal-content" >
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <span id="showId" style="display: none">
+                    Id : <label id="idToBeDisplay">ID</label> <br />
+                  </span>
+
+                  Description: <input type="text" id="description" required /> <br />
+                  Price : <input type="number" id="price" required /> <br />
+                  Days : <input type="number" id="days" required /> <br />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    id="modalClickerClose1"
+                    onclick="resetButton()"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button 
+                  id="saveButton" 
+                  type="submit" 
+                  onclick="doUpdate()" 
+                  class="btn btn-primary" 
+                  data-bs-dismiss="modal" 
+                  >
+                    Save New
+                  </button>
+                  <button
+                    style="display: none"
+                    id="updateButton"
+                    type="button"
+                    onclick="doUpdate()"
+                    class="btn btn-success"
+                  >
+                    Update
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div> <!--End Modal-->
+       
+
+      </div>
+
+
+                          
+
+    </div>
+
+
+               
+
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+  <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.html5.min.js
+  "></script>
+  <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js
+  "></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.colVis.min.js
+  "></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+
+  
+  <script src="../dashboard_student/script.js"></script>
+  
+  
+  
+
+
+  <script src="../../js/logout.js"></script>
+  
+  
+  
+
+  
+
+  <Script src="script.js"></Script>
+  
+
+  
+  
+
+</html>

@@ -1,0 +1,124 @@
+body {
+	color: black;
+	background: #063247;
+	font-family: 'Roboto', sans-serif;
+}
+.form-control, .form-control:focus, .input-group-addon {
+	border-color: #e1e1e1;
+	border-radius: 0;
+}
+.signup-form {
+	width: 50%;
+	margin: 0 auto;
+  padding-top: 50px; padding-bottom: 50px;
+}
+.signup-form h2 {
+	color: black;
+	margin: 0 0 15px;
+	text-align: center;
+}
+.signup-form .lead {
+	font-size: 14px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.signup-form form {		
+	border-radius: 10px;
+	margin-bottom: 15px;
+	background: #fff;
+	border: 1px solid #f3f3f3;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 13px;
+}
+.signup-form .form-control {
+	min-height: 38px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+}	
+.signup-form .input-group-addon {
+	max-width: 42px;
+	text-align: center;
+	background: none;
+	border-bottom: 1px solid #e1e1e1;
+	padding-left: 5px;
+}
+.signup-form .btn, .signup-form .btn:active {        
+	font-size: 16px;
+	font-weight: bold;
+	background: #18468c !important;
+	border-radius: 1px;
+	border: none;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #063247 !important;
+}
+.signup-form a {
+	color: #18468c;
+	text-decoration: none;
+}	
+.signup-form h3{
+  line-height: 75px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.signup-form h5 {
+	display: none;
+	text-align: center;
+}
+.signup-form a:hover {
+	text-decoration: underline;
+}
+.signup-form .fa {
+	font-size: 21px;
+	position: relative;
+	top: 8px;
+}
+.signup-form .fa-paper-plane {
+	font-size: 17px;
+}
+.signup-form .fa-check {
+	color: #fff;
+	left: 9px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+.form-group{
+  padding-bottom: 23px;
+}
+.signup-btn{
+  width: 70%;
+  text-align: center;
+  margin-left: 15%;
+  margin-bottom: 40px;
+  background-color: #18468c;
+
+}
+
+
+@media(max-width: 900px){
+	.signup-form {
+		width: 70%;
+		margin: 0 auto;
+		padding-top: 50px; padding-bottom: 50px;
+	}
+
+	.signup-form h3{
+		display: none;
+	}
+	.signup-form h5 {
+		display: inline-block;
+		text-align: center;
+		padding-left: 15%;
+		padding-bottom: 30px;
+		font-size: 28px;
+	}
+}

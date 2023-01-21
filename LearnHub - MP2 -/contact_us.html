@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/Jey_logo.png">
+    <link rel="stylesheet" href="CSS/contact_us.css">
+    <title>ContactUs</title>
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="logo">
+            <a href="index.html" class="logo"><img src="Images/Header_Logo.png" height="62px" width="135px" ></a>
+          </div>
+          <input type="checkbox" id="nav-check">
+          <label for="nav-check" class="nav-toggler">
+            <span></span>
+          </label>
+
+          <nav class="nav">
+            <ul>
+              <li><a href="#">LOGIN</a>
+                <ul class="dropdown-list">
+                  <li><a href="pages/login_student/index.html">Student Login</a></li>
+                  <li class="dropdown-list2"><a href="pages/login_employee/index.html">Employee Login</a></li>
+                </ul>
+
+             </li>
+              <li><a href="courses.html">COURSES</a></li>
+              <li><a href="contact_us.html">CONTACT US</a></li>
+              <li><a href="about_us.html">ABOUT US</a></li>
+              <li><a href="index.html" >HOME</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+
+    <div class="form-container">
+      <form action="contact_form.php" method="post">
+        
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname">
+        
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname">
+
+        <label for="lname">Email Address</label>
+        <input type="text" id="email" name="email">
+
+        <label for="lname">Phone Number</label>
+        <input type="text" id="phonenumber" name="phonenumber">
+        
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Philippines</option>
+          <option value="canada">Australia</option>
+          <option value="canada">Singapore</option>
+          <option value="usa">Canada</option>
+          <option value="usa">Japan</option>
+          <option value="usa">USA</option>
+          <option value="usa">UK</option>
+          
+        </select>
+        
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+          <input type="submit" value="Submit">
+        
+      </form>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer1">
+        <div class="footer1-1"> 
+          <p> <img src="Images/Header_Logo.png" height="50px" width="90px"></p>
+        </div>
+
+        <div class="footer1-2">
+          <p>LearnHub is a global company aiming to provide quality education that is 
+            accessible anytime and anywhere. </p>
+        </div>   
+        
+        
+        <div class="footer1-3">
+          <a href="#" class="facebook"><img src="Images/Fb-icon.png" height="25px" width="30px" alt="LearnHub"></a>
+          <a href="#" class="twitter"><img src="Images/Twitter-icon.png" height="25px" width="30px" alt="LearnHub"></a>
+          <a href="#" class="instagram"><img src="Images/Instagram_icon.png" height="25x" width="30px" alt="LearnHub"></a>
+          <a href="#" class="linkedin"><img src="Images/L-in-icon.png" height="25px" width="30px" alt="LearnHub"></a>
+        </div>
+        
+
+      </div>
+
+      <div class="footer2">
+        <div class="footer2-1">
+          <p>© 2022 LearnHub Inc. All rights reserved.</p>
+        </div>
+
+        <div class="footer2-2">
+          <a href="#" class="terms">Terms</a>
+          <a href="#" class="privacy">Privacy</a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+  </body>
+</html>

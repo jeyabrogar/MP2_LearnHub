@@ -1,0 +1,61 @@
+body{
+  background: #063247;
+}
+.login-form {
+  width: 35%;
+  margin: 50px auto;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.login-form h2{
+  padding-top: 20px;
+  padding-bottom: 35px;
+}
+.login-form a {
+	color: #18468c;
+	text-decoration: none;
+}	
+.login-form p :hover {
+	color: #18468c;
+	text-decoration: underline;
+}	
+.login-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 30px;
+}
+.login-form h2 {
+  margin: 0 0 15px;
+}
+.form-control, .btn {
+  min-height: 38px;
+  border-radius: 5px;
+}
+.btn {        
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #18468c;
+
+}
+.btn :hover{
+  background-color: #063247;
+}
+@media(max-width: 900px){
+	.login-form {
+		width: 80%;
+		margin: 50px auto;
+		padding-top: 50px; padding-bottom: 50px;
+	}
+
+	.signup-form h3{
+		display: none;
+	}
+	.signup-form h5 {
+		display: inline-block;
+		text-align: center;
+		padding-left: 27%;
+		padding-bottom: 30px;
+	}
+}

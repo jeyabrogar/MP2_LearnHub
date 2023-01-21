@@ -1,0 +1,103 @@
+*{
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.logo{
+  text-align: center;
+  font-size: 20px;
+
+
+}
+.sidenav h2{
+
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  background-color: #063247;
+  color: #D1D1D1
+
+  ;
+  font-size: 30px;
+  line-height: 80px;
+
+
+}
+.sidenav a{
+  display: block;
+  text-align: center;
+  margin-top: -20px;
+  width: 100%;
+  color: #D1D1D1
+
+
+
+  ;
+  text-decoration: none;
+}
+.sidenav a :hover{
+ opacity: 70%;
+ background-color: #E6E6E6;
+}
+
+/* The sidenav */
+.sidenav {
+  display: inline-block;
+  height: 100%;
+  width: 13%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #D1D1D1;
+  opacity: 90% ;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.div1{
+ margin-left: 15%;
+ padding-top: 20px;
+ display: inline-block;
+ position: fixed;
+ overflow-x: hidden;
+
+
+
+ width: 80%;
+
+}
+.div1 h2{
+  font-weight: lighter;
+  padding-bottom: 10px;
+  font-size: 35px;
+}
+.div1 h3{
+  display: none;
+}
+hr{
+  height: 0.03cm;
+  width: 100%;
+}
+.div2 {
+  height: 1000px;
+  padding-top: 110px;
+  margin-left: 15%;
+}
+/* Page content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  .div1 h3{
+    margin-left: 30%;
+    display: block;
+    margin-left: 50%;
+    
+
+  }
+}
+
+
